@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to DOCX Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PDF to DOCX Converter</h1>
+        <form id="pdf-to-docx-form">
+            <div class="form-group">
+                <label for="pdf-file">PDF File:</label>
+                <input type="text" id="pdf-file" name="pdf-file" placeholder="Enter the path to the PDF file">
+            </div>
+            <div class="form-group">
+                <label for="docx-file">DOCX File:</label>
+                <input type="text" id="docx-file" name="docx-file" placeholder="Enter the path to the DOCX file">
+            </div>
+            <button type="button" onclick="convertPdfToDocx()">Convert</button>
+        </form>
+    </div>
+
+    <script>
+        function convertPdfToDocx() {
+            var pdfFile = document.getElementById("pdf-file").value;
+            var docxFile = document.getElementById("docx-file").value;
+
+            // Call the pdf_to_docx function from the Python script
+            pdf_to_docx(pdfFile, docxFile);
+        }
+    </script>
+</body>
+</html>
+
+<script src="pdf_to_word.py"></script>
+
+python -m http.server
